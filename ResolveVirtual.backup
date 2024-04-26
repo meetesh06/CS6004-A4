@@ -1,0 +1,133 @@
+import soot.*;
+import soot.jimple.*;
+import soot.jimple.spark.SparkTransformer;
+import soot.jimple.toolkits.callgraph.CallGraph;
+import soot.jimple.toolkits.callgraph.Edge;
+
+import java.util.*;
+
+import fj.P;
+
+public class ResolveVirtual extends BodyTransformer {
+
+    public void addNewMethod(String className, String methodName, List<Type> params, Type retType, int modifier) {
+        // Get the SootClass object for the class
+        SootClass stringClass = Scene.v().getSootClass(className);
+
+        // Create a new method
+        SootMethod newMethod = new SootMethod(methodName,
+                params, // Parameter types (in this case, just int)
+                retType, // Return type
+                modifier);
+
+        // Create an empty body for the new method
+        JimpleBody body = Jimple.v().newBody(newMethod);
+        newMethod.setActiveBody(body);
+
+        // // Create a return statement as the body of the new method
+        // PatchingChain<Unit> units = body.getUnits();
+        // units.add(Jimple.v().newReturnVoidStmt());
+
+        // Add the new method to the class
+        stringClass.addMethod(newMethod);
+
+        // Print the modified class to check if the method was added
+        System.out.println(stringClass);
+    }
+
+    HashMap<SootMethod, SootMethod> staticReplacementMap = new HashMap<>();
+
+    public SootMethod ensureDuplicateEntryFor(SootMethod m) {
+        System.out.println("ensureDuplicateEntryFor: " + m.getSignature());
+        if (staticReplacementMap.containsKey(m))
+            return staticReplacementMap.get(m);
+        else {
+            SootClass declaringClass = m.getDeclaringClass();
+            // Create a copy of the method
+            SootMethod copiedMethod = new SootMethod(
+                    m.getName() + "_copied", // Create a new name for the copied method
+                    m.getParameterTypes(),
+                    VoidType.v(),
+                    m.getModifiers());
+
+            // Clone the method body
+            JimpleBody copiedBody = Jimple.v().newBody(copiedMethod);
+            copiedBody.getUnits().add(Jimple.v().newReturnVoidStmt());
+
+            copiedBody.validate();
+
+            // Add the copied method to the declaring class
+            declaringClass.addMethod(copiedMethod);
+            declaringClass.setApplicationClass();
+
+            // Add the copied method to the map
+            staticReplacementMap.put(m, copiedMethod);
+
+            System.out.println(copiedMethod);
+
+            return copiedMethod;
+        }
+    }
+
+    @Override
+    protected void internalTransform(Body body, String phaseName, Map<String, String> options) {
+
+        SootMethod method = body.getMethod();
+
+        // Exclude library methods and constructor
+        if (method.isJavaLibraryMethod() || method.isConstructor()) {
+            return;
+        }
+
+        // System.out.println("Internal Transform called on method: " + method.getName()
+        // + " - " + phaseName);
+        // Iterate over each unit (statement) in the method body
+        PatchingChain<Unit> units = body.getUnits();
+        Iterator<Unit> unitIt = units.snapshotIterator();
+
+        while (unitIt.hasNext()) {
+            Stmt stmt = (Stmt) unitIt.next();
+
+            // Look for method invocation statements
+            if (stmt instanceof InvokeStmt) {
+                InvokeExpr expr = ((InvokeStmt) stmt).getInvokeExpr();
+                if (expr instanceof VirtualInvokeExpr) {
+                    CallGraph cg = Scene.v().getCallGraph();
+                    Iterator<Edge> outEdges = cg.edgesOutOf(stmt);
+
+                    SootMethod targetMethod = null;
+
+                    int size = 0;
+                    while (outEdges.hasNext()) {
+                        size++;
+                        targetMethod = outEdges.next().tgt();
+                    }
+
+                    if (size > 1)
+                        continue;
+                    if (targetMethod == null)
+                        targetMethod = expr.getMethod().getActiveBody().getMethod();
+
+                    // Create a duplicate method
+                    ensureDuplicateEntryFor(targetMethod);
+
+                    // Replace call from current method to duplicate method
+
+
+                    System.out.println(method.getName() + " -- Call node: " + stmt.getJavaSourceStartLineNumber()
+                            + " -- (" + size + ")" + targetMethod.getSignature());
+                }
+                // if (expr instanceof StaticInvokeExpr) {
+                // SootMethod invokedMethod = expr.getMethod();
+
+                // // Instrumenting: Print a message before each static method invocation
+                // String message = "Invoking static method: " + invokedMethod.getSignature();
+                // units.insertBefore(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(
+                // Scene.v().getMethod("<java.lang.System: void
+                // out.println(java.lang.String)>").makeRef(),
+                // StringConstant.v(message))), stmt);
+                // }
+            }
+        }
+    }
+}

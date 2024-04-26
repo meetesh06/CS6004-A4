@@ -1,0 +1,7 @@
+*.class
+*.DOT
+.vscode
+*.jimple
+rm *.png
+rm *.html
+recording/*
