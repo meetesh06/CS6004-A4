@@ -1,6 +1,0 @@
-FcpaEdges, SparkEdges, Context, CallSite
-1, 1, 1, "virtualinvoke $r0.<Test: void bar()>()"
-1, 1, 1, "specialinvoke $r0.<Test: void <init>()>()"
-1, 1, 2, "specialinvoke r0.<java.lang.Object: void <init>()>()"
-1, 1, 4, "virtualinvoke r0.<Test: void foo()>()"
-1, 1, 5, "virtualinvoke r0.<Test: void bar()>()"

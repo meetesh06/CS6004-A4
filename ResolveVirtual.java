@@ -90,6 +90,7 @@ public class ResolveVirtual extends SceneTransformer {
         getlistofMethods(mainMethod, methods);
 
         for (SootMethod m : methods) {
+            if (!m.hasActiveBody()) continue;
             // Identify methods that need to be cloned
             m.getActiveBody().getUnits().forEach((u) -> {
                 if (u instanceof InvokeStmt) {
@@ -109,8 +110,10 @@ public class ResolveVirtual extends SceneTransformer {
                         if (size > 1)
                             return;
 
-                        if (targetMethod == null)
+                        if (targetMethod == null) {
+                            if (!expr.getMethod().hasActiveBody()) return;
                             targetMethod = expr.getMethod().getActiveBody().getMethod();
+                        }
 
                         if (targetMethod.isJavaLibraryMethod() || targetMethod.isConstructor())
                             return;

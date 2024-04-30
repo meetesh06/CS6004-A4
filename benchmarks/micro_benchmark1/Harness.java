@@ -1,4 +1,4 @@
-public class DispatchBenchmark {
+public class Harness {
 
     static class ParentFormula {
         double pie = Math.PI;
@@ -55,7 +55,7 @@ public class DispatchBenchmark {
     }
 
     public static void main(String[] args) {
-        int iterations = 10000; // Number of iterations for the benchmark
+        int iterations = 1000; // Number of iterations for the benchmark
         
         for (int i = 0; i < iterations; i++) {
             double area = 0;
