@@ -1,0 +1,160 @@
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.070s
+user	0m0.045s
+sys	0m0.004s
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.036s
+user	0m0.034s
+sys	0m0.005s
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.038s
+user	0m0.034s
+sys	0m0.008s
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.037s
+user	0m0.032s
+sys	0m0.008s
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.037s
+user	0m0.032s
+sys	0m0.009s
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.037s
+user	0m0.033s
+sys	0m0.008s
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.037s
+user	0m0.026s
+sys	0m0.015s
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.036s
+user	0m0.027s
+sys	0m0.014s
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.036s
+user	0m0.036s
+sys	0m0.004s
+Exception in thread "main" java.lang.VerifyError: JVMVRFY012 stack shape inconsistent; class=Scene, method=trace(LRay;I)Ljava/awt/Color;, pc=48; Type Mismatch, argument 1 in signature Sphere.intersect_copied:(LRay;LSphere;)D does not match
+Exception Details:
+  Location:
+    Scene.trace(LRay;I)Ljava/awt/Color; @48: JBinvokestatic
+  Reason:
+    Type 'SceneObject' (current frame, stack[1]) is not assignable to 'Sphere'
+  Current Frame:
+    bci: @48
+    flags: { }
+    locals: { 'Scene', 'Ray', integer, top, top, double, double_2nd, 'SceneObject', '[LSceneObject;', integer, integer, 'SceneObject' }
+    stack: { 'Ray', 'SceneObject' }
+	at Harness.main(Harness.java:189)
+
+real	0m0.038s
+user	0m0.037s
+sys	0m0.005s

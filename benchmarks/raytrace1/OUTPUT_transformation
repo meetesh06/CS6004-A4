@@ -1,0 +1,8 @@
+Soot started on Tue Apr 30 13:30:22 EDT 2024
+193 : 1
+======== ResolveVirtual Statistics ========
+  Call Sites Transformed = 27
+  Static Methods Added   = 27
+===========================================
+Soot finished on Tue Apr 30 13:30:42 EDT 2024
+Soot has run for 0 min. 19 sec.

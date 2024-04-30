@@ -1,0 +1,10 @@
+static,virtual
+506486,11173920
+Traceback (most recent call last):
+  File "helpers/cumulateResults.py", line 32, in <module>
+    main()
+  File "helpers/cumulateResults.py", line 24, in main
+    data = read_data(file_path)
+  File "helpers/cumulateResults.py", line 9, in read_data
+    static_calls, virtual_calls = map(int, line.split(','))
+ValueError: invalid literal for int() with base 10: 'Exception in thread "main" 2'
